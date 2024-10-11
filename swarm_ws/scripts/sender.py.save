@@ -1,0 +1,12 @@
+xx:xx:xx:xx:xx:xx# Bluetooth client (sender) on the other Raspberry Pi
+import bluetooth
+
+server_address = "xx:xx:xx:xx:xx:xx"  # Replace with the MAC address of the server Raspberry Pi
+
+client_sock = bluetooth.BluetoothSocket(bluetooth.RFCOMM)
+port = 1
+
+client_sock.connect((server_address, port))
+client_sock.send("Hello, Raspberry Pi!")
+client_sock.close()
+
